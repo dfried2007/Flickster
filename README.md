@@ -1,51 +1,58 @@
-# Week 1 Project - Flickster
+# Project 1 - *Flickster*
 
-Flickster is an android app that allows browsing a read-only movie listing using the IMDB Movie Database API.  It also allows for playing of an associated movie trailer from YouTube.
+Flickster shows the latest movies currently playing in theaters.  The app utilizes the Movie Database API to display images and basic information about these movies to the user.  It also allows for playing of an associated movie trailer from YouTube.
 
-Submitted by: Dave Friedman
-
-Time spent: 24 hours spent in total
+Time spent: 30 hours spent in total
 
 ## User Stories
 
 The following **required** functionality is completed:
 
-* [y] User can view a list of movies (title, poster image, and overview) currently playing in theaters from the Movie Database API. 
-* [y] Lists are fully optimized for performance using the ViewHolder pattern to cache view lookups within the adapter.
-* [y] Views are responsive for both landscape/portrait mode.
-* [y] In portrait mode, the poster image, title, and movie overview are shown. In landscape mode, the rotated layout uses the backdrop image instead and shows the title and movie overview to the right of it.
+* [y] User can **scroll through current movies** from the Movie Database API
+* [y] Layout is optimized with the [ViewHolder](http://guides.codepath.com/android/Using-an-ArrayAdapter-with-ListView#improving-performance-with-the-viewholder-pattern) pattern.
+* [y] For each movie displayed, user can see the following details:
+  * [y] Title, Poster Image, Overview (Portrait mode)
+  * [y] Title, Backdrop Image, Overview (Landscape mode)
+(In portrait mode, the poster image, title, and movie overview are shown. In landscape mode, the rotated layout uses the backdrop image instead and shows the title and movie overview to the right of it.)
 
 The following **optional** features are implemented:
 
-* [y] Display a nice default placeholder graphic for each image during loading.
-* [y] Improved the user interface through styling and coloring.  (rounded image borders, static background image)
-* [y] Exposed details of movies (ratings using RatingBar, Popularity, and ReleaseDate) in the same list.
-* [y] Allowed video trailers to be played in full-screen using the YouTubePlayerView.  (All videos are played immediately after clicking anywhere on a movie row.)
+* [y] Display a nice default [placeholder graphic](http://guides.codepath.com/android/Displaying-Images-with-the-Picasso-Library#configuring-picasso) for each image during loading.
+* [y] Improved the user interface through styling and coloring.
+
+The following **bonus** features are implemented:
+
+* [y] Allow user to view details of the movie including ratings and popularity within a separate activity or dialog fragment.  (within the list.)
+* [N] When viewing a popular movie (i.e. a movie voted for more than 5 stars) the video should show the full backdrop image as the layout.  Uses [Heterogenous ListViews](http://guides.codepath.com/android/Implementing-a-Heterogenous-ListView) or [Heterogenous RecyclerView](http://guides.codepath.com/android/Heterogenous-Layouts-inside-RecyclerView) to show different layouts.  (...but I added the popularity thermometer...)
+* [y] Allow video trailers to be played in full-screen using the YouTubePlayerView.
+    * [N] Overlay a play icon for videos that can be played.
+    * [y] More popular movies should start a separate activity that plays the video immediately.
+    * [N] Less popular videos rely on the detail page should show ratings and a YouTube preview.
+* [N] Apply the popular [Butterknife annotation library](http://guides.codepath.com/android/Reducing-View-Boilerplate-with-Butterknife) to reduce boilerplate code.
+* [y] Apply rounded corners for the poster or background images using [Picasso transformations](https://guides.codepath.com/android/Displaying-Images-with-the-Picasso-Library#other-transformations)
+* [N] Replaced android-async-http network client with the popular [OkHttp](http://guides.codepath.com/android/Using-OkHttp) networking libraries.
 
 The following **additional** features are implemented:
 
 * [y] List anything else that you can get done to improve the app functionality!
       ** -Popularity displayed in a horizontal progress bar with RTL orientation.
-      ** -Added rounded corners for all images using the Picasso transformations.
 
-* Future version may:
-      ** -Fire off on-device Fandango ticket purchase activity.
-      ** -Order the movies by popularity (default), date, star rating, alphabetical.
-      ** -Allow the user to select from and order and list or video trailers to choose which trailer(s) will be played for a movie.
+## Video Walkthrough
 
-## Video Walkthrough 
+Here's a walkthrough of implemented user stories:
 
-Here's a walkthrough of implemented user stories:  (http://i.imgur.com/Wb2zKn5.gifv)
-
-<img src='http://i.imgur.com/Wb2zKn5.gifv' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/BXf9uF9.gifv' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
 Describe any challenges encountered while building the app.  [MORE FUN.]
--The Genymotion emulator seemed not to like to play YouTube videos for more than 1 second at a time until I replace the parent 
-ConstraintsLayout with a RelativeLayout.
+
+## Open-source libraries used
+
+- [Android Async HTTP](https://github.com/loopj/android-async-http) - Simple asynchronous HTTP requests with JSON parsing
+- [Picasso](http://square.github.io/picasso/) - Image loading and caching library for Android
 
 ## License
 
@@ -62,3 +69,4 @@ ConstraintsLayout with a RelativeLayout.
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+
