@@ -37,9 +37,13 @@ The following **additional** features are implemented:
 * [y] List anything else that you can get done to improve the app functionality!
       ** -Popularity displayed in a horizontal progress bar with RTL orientation.
 
+* Future version may:
+      ** -Allow the user to choose which trailers he'd like to watch.
+      ** -Offer an Activty to allow purchasing tickets on Fandango's API.
+
 ## Video Walkthrough
 
-Here's a walkthrough of implemented user stories:
+Here's a walkthrough of implemented user stories:  (http://i.imgur.com/BXf9uF9.gifv)
 
 <img src='http://i.imgur.com/BXf9uF9.gifv' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
